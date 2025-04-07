@@ -1,10 +1,8 @@
 const RichTextRenderer = ({ content }) => {
-  //   console.log({ content });
   function renderChildren(children) {
     if (!Array.isArray(children)) return null;
 
     return children.map((child, idx) => {
-      //   console.log("child inside children: ", child);
       switch (child.type) {
         case "text":
           return <span key={idx}>{child.content}</span>;

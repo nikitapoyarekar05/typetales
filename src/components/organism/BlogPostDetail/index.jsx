@@ -10,8 +10,6 @@ const BlogPostDetail = () => {
   const { id } = useParams();
   const post = BLOG_POSTS.find((post) => post.id === Number(id));
 
-  console.log({ post });
-
   if (!post) {
     return <p>Blog post not found.</p>;
   }
