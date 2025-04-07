@@ -18,11 +18,13 @@ A **React 19** blogging application built with **Vite** and tested using **Vites
         │ │ │ │ ├── index.jsx 
         │ │ │ │ ├── BlogPostItem.test.jsx 
         │ │ │ │ ├── BlogPostItem.module.css 
+        │ │ │ ├── RichTextRenderer/ 
+        │ │ │ │ ├── index.jsx 
         │ │ ├── organism/ # Complex components 
-        │ │ │ │ │ ├── BlogComponent/
+        │ │ │ │ │ ├── BlogPostDetail/
         │ │ │ │ │ │ ├── index.jsx 
-        │ │ │ │ │ │ ├── BlogComponent.test.jsx 
-        │ │ │ │ │ │ ├── BlogComponent.module.css
+        │ │ │ │ │ │ ├── BlogPostDetail/test.jsx 
+        │ │ │ │ │ │ ├── BlogPostDetail/module.css
         │ │ │ │ │ ├── BlogPostList/
         │ │ │ │ │ │ ├── index.jsx 
         │ │ │ │ │ │ ├── BlogPostList.test.jsx 
