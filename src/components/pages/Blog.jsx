@@ -1,7 +1,7 @@
-import BlogComponent from "../organism/BlogComponent/index";
+import BlogPostDetail from "../organism/BlogPostDetail/index";
 
 const Blog = () => {
-  return <BlogComponent />;
+  return <BlogPostDetail />;
 };
 
 export default Blog;
