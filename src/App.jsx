@@ -7,7 +7,6 @@ import Home from "./components/pages/Home.jsx";
 function App() {
   return (
     <Routes>
-      {console.log("to check deployment")}
       <Route path="/" element={<Home />} />
       <Route path="/posts/:id" element={<BlogComponent />} />
     </Routes>
