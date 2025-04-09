@@ -1,3 +1,19 @@
+.addBlog {
+  padding: 0.625rem;
+  display: block;
+  text-align: end;
+}
+
+.addBlogBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .blogPostList {
   display: grid;
   gap: 1.25rem;
