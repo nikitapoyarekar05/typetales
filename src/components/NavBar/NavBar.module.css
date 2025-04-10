@@ -1,0 +1,82 @@
+.navBar {
+  background-color: #003366;
+  position: fixed;
+  top: 0;
+  padding: 0 1.25rem;
+  z-index: 1000;
+  width: 100%;
+  height: 3.75rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.links {
+  padding-right: 1rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+.links a:last-child {
+  padding-right: 1.25rem;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  display: none;
+  cursor: pointer;
+  padding-right: 2rem;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 3.75rem;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobileMenu a {
+  padding: 1.25rem;
+  font-size: 1.125rem;
+  color: #003366;
+  text-decoration: none;
+  border-bottom: 0.063rem solid #eee;
+}
+
+a:focus,
+button:focus {
+  outline: 0.125rem solid #66aaff;
+  outline-offset: 0.125rem;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

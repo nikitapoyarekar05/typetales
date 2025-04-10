@@ -6,6 +6,7 @@ import BLOG_POSTS from "./utilities/mockData";
 
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import Layout from "./components/Layout";
 
 // Initialize blog posts in localStorage only once
 if (!localStorage.getItem("blogPosts")) {
@@ -14,10 +15,12 @@ if (!localStorage.getItem("blogPosts")) {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/posts/:id" element={<Blog />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts/:id" element={<Blog />} />
+      </Routes>
+    </Layout>
   );
 }
 

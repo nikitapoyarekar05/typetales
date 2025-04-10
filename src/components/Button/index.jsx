@@ -8,6 +8,7 @@ const Button = ({
   className,
   dataTestid,
   ariaLabel,
+  ariaExpanded,
   onClick,
   children,
 }) => {
@@ -28,6 +29,12 @@ const Button = ({
     return classes.join(" ");
   };
 
+  const getDataTestId = () => {
+    if (dataTestid) return dataTestid;
+    if (!dataTestid & variant) return `${variant}-${id}`;
+    return id;
+  };
+
   return (
     <button
       id={id}
@@ -35,10 +42,9 @@ const Button = ({
       disabled={disabled ?? false}
       aria-disabled={disabled ?? false}
       className={getClassNames(variant, disabled, styles, className)}
-      data-testid={
-        !dataTestid ? `${variant}-${id}` : `${variant}-${dataTestid}`
-      }
+      data-testid={getDataTestId()}
       aria-label={ariaLabel}
+      aria-expanded={ariaExpanded}
       onClick={onClick}
     >
       <span>{children}</span>

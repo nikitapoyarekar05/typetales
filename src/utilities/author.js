@@ -1,4 +1,10 @@
 export const AUTHOR = {
+    APP_NAME: "TypeTales",
+    HEADER_LINKS: {
+        HOME: "Home",
+        BLOG: "Blog",
+        ABOUT: "About"
+    },
     NO_BLOGS_POSTS: "No blog posts available.",
     CREATE_POST: "Create Post",
     UPDATE_POST: "Update Post",
@@ -20,5 +26,6 @@ export const AUTHOR = {
         EDIT_BLOG: "Edit Blog",
         DELETE: "Delete",
         CANCEL: "Cancel"
-    }
+    },
+    ALL_RIGHTS: "All rights reserved."
 }
