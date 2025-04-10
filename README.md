@@ -11,40 +11,20 @@ A **React 19** blogging application built with **Vite** and tested using **Vites
 ## Project Structure  
     type-tales 
         │── src/ 
-        │ ├── assets/ # Static assets (images, icons, etc.) 
-        │ ├── components/ # Reusable React components 
-        │ │ ├── molecules/ # Small UI components 
-        │ │ │ ├── BlogPostItem/ 
-        │ │ │ │ ├── index.jsx 
-        │ │ │ │ ├── BlogPostItem.test.jsx 
-        │ │ │ │ ├── BlogPostItem.module.css 
-        │ │ │ ├── RichTextRenderer/ 
-        │ │ │ │ ├── index.jsx 
-        │ │ ├── organism/ # Complex components 
-        │ │ │ │ │ ├── BlogPostDetail/
-        │ │ │ │ │ │ ├── index.jsx 
-        │ │ │ │ │ │ ├── BlogPostDetail/test.jsx 
-        │ │ │ │ │ │ ├── BlogPostDetail/module.css
-        │ │ │ │ │ ├── BlogPostList/
-        │ │ │ │ │ │ ├── index.jsx 
-        │ │ │ │ │ │ ├── BlogPostList.test.jsx 
-        │ │ │ │ │ │ ├── BlogPostList.module.css
-        │ ├── constants/ # Static data 
-        │ │ │ │ ├── mockData.js
-        │ ├── pages/ # Page-level components
-        │ │ │ │ ├── Blog.jsx
-        │ │ │ │ ├── Home.jsx
-        │ ├── utility/ # Utility functions (formatting, helpers) 
-        │ │ │ │ ├── utils.js
-        │ ├── tests/ # Test utilities
-        │ │ │ │ ├── setup.js
-        │ ├── App.jsx # Main application component
-        │ ├── main.jsx # Entry point
-        │── public/ # Static files (index.html, etc.)
-        │── package.json # Project dependencies
-        │── vite.config.js # Vite configuration
-        │── .eslintrc.js # Linting rules
-        │── .gitignore # Git ignore rules
+        │ ├── assets/             # Static assets (images, icons, etc.) 
+        │ ├── components/         # Reusable React components 
+        │ ├── container/          # Container components for pages
+        │ ├── globals/            # Global CSS files
+        │ ├── pages/              # Page components (Home, Blog)
+        │ ├── utilities/          # utility files containing mock data, authoring and helper functions
+        │ ├── App.jsx             # Main application component
+        │ ├── main.jsx            # Entry point
+        ├── tests/                # vite test setup files
+        │── public/               # Static files (index.html, etc.)
+        │── package.json          # Project dependencies
+        │── vite.config.js        # Vite configuration
+        │── .eslintrc.js          # Linting rules
+        │── .gitignore            # Git ignore rules
 
 
 ## Installation & Setup  
