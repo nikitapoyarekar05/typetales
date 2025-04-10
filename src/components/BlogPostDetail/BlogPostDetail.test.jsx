@@ -3,8 +3,8 @@ import { MemoryRouter } from "react-router-dom";
 import { describe, it, expect, vi } from "vitest";
 
 import BlogComponent from "./index";
-import BLOG_POSTS from "../../../constants/mockData";
-import { formatDate } from "../../../utility/utils";
+import BLOG_POSTS from "../../utilities/mockData";
+import { formatDate } from "../../utilities/helpers";
 
 describe("Blog Component when post exists", () => {
   vi.mock("./index.jsx", () => ({
