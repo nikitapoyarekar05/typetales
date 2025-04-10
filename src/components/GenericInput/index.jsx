@@ -1,16 +1,18 @@
 import formStyles from "../../globals/form.module.css";
 
 function GenericInput({
-  htmlFor,
-  label,
   id,
+  htmlFor,
   type,
-  placeholder,
+  required,
+  label,
   value,
   onChange,
   error,
   errorMessage,
 }) {
+  const errorId = error ? `${id}-error` : undefined;
+
   return (
     <div className={formStyles.formGroup}>
       <label className={formStyles.label} htmlFor={htmlFor}>
@@ -18,13 +20,18 @@ function GenericInput({
       </label>
       <input
         id={id}
-        type={type}
+        type={type ?? "text"}
         className={formStyles.input}
         value={value}
-        placeholder={placeholder ?? ""}
+        aria-describedby={errorId}
+        aria-required={required}
         onChange={(e) => onChange(e.target.value)}
       />
-      {error && <span className={formStyles.error}>{errorMessage}</span>}
+      {error && (
+        <span id={errorId} className={formStyles.error}>
+          {errorMessage}
+        </span>
+      )}
     </div>
   );
 }

@@ -2,24 +2,44 @@ import styles from "./Button.module.css";
 
 const Button = ({
   id,
-  buttonType,
-  dataTestid,
-  className,
-  onClick,
-  disabled,
-  children,
   type,
+  disabled,
+  variant,
+  className,
+  dataTestid,
+  ariaLabel,
+  onClick,
+  children,
 }) => {
+  const getClassNames = (variant, disabled, styles, className) => {
+    const buttonStyles = {
+      primary: styles.primaryButton,
+      secondary: styles.secondaryButton,
+      danger: styles.danger,
+    };
+
+    const classes = [
+      styles.btn,
+      buttonStyles[variant],
+      disabled && styles.disabled,
+      className,
+    ].filter(Boolean);
+
+    return classes.join(" ");
+  };
+
   return (
     <button
       id={id}
-      type={type}
-      data-testid={dataTestid ? `${buttonType}-${dataTestid}` : buttonType}
-      onClick={onClick}
+      type={type ?? "button"}
       disabled={disabled ?? false}
-      className={`${styles.btn} ${
-        buttonType ? styles.primaryButton : styles.secondaryButton
-      } ${disabled && styles.disabled} ${className}`}
+      aria-disabled={disabled ?? false}
+      className={getClassNames(variant, disabled, styles, className)}
+      data-testid={
+        !dataTestid ? `${variant}-${id}` : `${variant}-${dataTestid}`
+      }
+      aria-label={ariaLabel}
+      onClick={onClick}
     >
       <span>{children}</span>
     </button>

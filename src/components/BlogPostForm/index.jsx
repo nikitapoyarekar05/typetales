@@ -30,13 +30,24 @@ const BlogPostForm = ({ post, onSubmit }) => {
     }
   };
 
+  const getId = () => {
+    if (window.location.pathname.includes("posts")) return "submit-update-post";
+    return "submit-create-post";
+  };
+
+  const getButtonLabel = () => {
+    if (window.location.pathname.includes("posts")) return AUTHOR.UPDATE_POST;
+    return AUTHOR.CREATE_POST;
+  };
+
   return (
     <div className={formStyles.blogPostFormContainer}>
       <form className={styles.blogPostForm} onSubmit={handleSubmit}>
         <GenericInput
-          label={AUTHOR.FORM_LABELS.TITLE}
           id="title"
           htmlFor="title"
+          required={true}
+          label={AUTHOR.FORM_LABELS.TITLE}
           value={title}
           onChange={setTitle}
           error={errors.title}
@@ -44,9 +55,10 @@ const BlogPostForm = ({ post, onSubmit }) => {
         />
 
         <Editor
-          htmlFor="content"
-          label={AUTHOR.FORM_LABELS.CONTENT}
           id="content"
+          htmlFor="content"
+          required={true}
+          label={AUTHOR.FORM_LABELS.CONTENT}
           content={content}
           onChange={setContent}
           error={errors.content}
@@ -54,9 +66,10 @@ const BlogPostForm = ({ post, onSubmit }) => {
         />
 
         <GenericInput
-          label={AUTHOR.FORM_LABELS.AUTHOR}
           id="author"
           htmlFor="author"
+          required={true}
+          label={AUTHOR.FORM_LABELS.AUTHOR}
           value={author}
           onChange={setAuthor}
           error={errors.author}
@@ -64,11 +77,11 @@ const BlogPostForm = ({ post, onSubmit }) => {
         />
 
         <GenericInput
-          label={AUTHOR.FORM_LABELS.DATE}
           id="date"
           htmlFor="date"
           type="date"
-          placeholder="Select a date"
+          required={true}
+          label={AUTHOR.FORM_LABELS.DATE}
           value={date}
           onChange={setDate}
           error={errors.date}
@@ -77,13 +90,14 @@ const BlogPostForm = ({ post, onSubmit }) => {
 
         <div className={styles.buttonDiv}>
           <Button
-            className={styles.postButton}
-            buttonType="primary"
+            id={getId()}
             type="submit"
+            variant="primary"
+            className={styles.postButton}
+            dataTestid={getId()}
+            ariaLabel={getButtonLabel()}
           >
-            {window.location.pathname.includes("posts")
-              ? AUTHOR.UPDATE_POST
-              : AUTHOR.CREATE_POST}
+            {getButtonLabel()}
           </Button>
         </div>
       </form>

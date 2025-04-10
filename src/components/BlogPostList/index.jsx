@@ -12,12 +12,14 @@ const BlogPostList = ({ posts = [], onClickHandler, disabled }) => {
     <>
       <div className={styles.addBlog}>
         <Button
-          onClick={handleClick}
+          id="add-blog"
           disabled={disabled}
+          variant="primary"
           dataTestid="add-blog"
-          buttonType="primary"
+          ariaLabel={AUTHOR.BUTTON_LABELS.ADD_BLOG}
+          onClick={handleClick}
         >
-          {AUTHOR.ADD_BLOG}
+          {AUTHOR.BUTTON_LABELS.ADD_BLOG}
         </Button>
       </div>
       {posts.length === 0 ? (
