@@ -1,4 +1,5 @@
 export const AUTHOR = {
+    BLOG_POSTS: "Blog Posts",
     APP_NAME: "TypeTales",
     HEADER_LINKS: {
         HOME: "Home",

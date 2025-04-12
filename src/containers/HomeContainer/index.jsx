@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BlogPostList from "../../components/BlogPostList";
 import BlogPostForm from "../../components/BlogPostForm";
+import { AUTHOR } from "../../utilities/author";
 
 const HomeContainer = () => {
   const [showForm, setShowForm] = useState(false);
@@ -20,7 +21,7 @@ const HomeContainer = () => {
 
   return (
     <>
-      <h1>Blog Posts</h1>
+      <h1>{AUTHOR.BLOG_POSTS}</h1>
       {showForm ? (
         <BlogPostForm onSubmit={handleSavePost} />
       ) : (
