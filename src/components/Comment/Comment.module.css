@@ -1,0 +1,39 @@
+.comment {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 0.063rem solid #eaeaea;
+}
+
+.avatarImage img {
+  width: 3.125rem;
+}
+
+.commentMeta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.commentParticulars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentorName {
+  text-align: justify;
+  font-weight: bold;
+}
+
+.commentText {
+  text-align: justify;
+  color: #666;
+}
+
+.date {
+  text-align: end;
+  font-size: 0.75rem;
+  color: #999;
+}

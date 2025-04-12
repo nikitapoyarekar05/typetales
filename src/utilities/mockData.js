@@ -4,7 +4,23 @@ const BLOG_POSTS = [
     "content": "<div><span style=\"color: #ce9178\">A beginner-friendly guide to understanding the foundational technologies of front-end development.</span></div><h2><span style=\"color: #ce9178\">Why the Core Trio Matters?</span></h2><ul><li><span style=\"color: #ce9178\">HTML -&nbsp;</span><span style=\"color: #ce9178\">structures the content</span></li><li><span style=\"color: #ce9178\">CSS - styles it</span></li><li><span style=\"color: #ce9178\">JavaScript - makes it interactive</span>​</li></ul><div><br></div>",
     "author": "Nikita DP",
     "date": "1994-11-05",
-    "id": 1744246287731
+    "id": 1744246287731,
+    "comments": [
+      {
+        id: "1",
+        name: "Nikita",
+        avatarUrl: '',
+        commentText: "This is really inspiring",
+        date: 'Apr 10, 2025 at 2:55 PM'
+      },
+      {
+        id: "2",
+        name: "Shreyas",
+        avatarUrl: '',
+        commentText: "Love how this is framed",
+        date: 'Apr 10, 2025 at 6:35 PM'
+      }
+    ]
   },
   {
     "title": "NDP Essential Modern JavaScript Features You Should Know",

@@ -27,5 +27,12 @@ export const AUTHOR = {
         DELETE: "Delete",
         CANCEL: "Cancel"
     },
-    ALL_RIGHTS: "All rights reserved."
+    ALL_RIGHTS: "All rights reserved.",
+    COMMENT_FORM_LABELS: {
+        NAME: "Name",
+        COMMENT: "Comment",
+        AVATAR_URL: "Avatar URL (optional)"
+    },
+    SUBMIT: "Submit",
+    COMMENTS: "Comments"
 }

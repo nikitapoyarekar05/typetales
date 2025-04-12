@@ -41,3 +41,9 @@
   font-size: 0.875rem;
   text-align: start;
 }
+
+.textArea {
+  border: 0.063rem solid #cccccc;
+  border-radius: 0.25rem;
+  color: #333333;
+}

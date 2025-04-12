@@ -1,17 +1,18 @@
 import formStyles from "../../globals/form.module.css";
 
-function GenericInput({
+function GenericTextArea({
   id,
   htmlFor,
-  type,
   required,
   label,
-  placeholder,
-  disabled = false,
   value,
   onChange,
   error,
   errorMessage,
+  rows = 4,
+  cols,
+  placeholder,
+  maxLength,
 }) {
   const errorId = error ? `${id}-error` : undefined;
 
@@ -20,16 +21,17 @@ function GenericInput({
       <label className={formStyles.label} htmlFor={htmlFor}>
         {label}
       </label>
-      <input
+      <textarea
         id={id}
-        type={type ?? "text"}
-        className={formStyles.input}
-        placeholder={placeholder}
-        disabled={disabled}
+        className={formStyles.textArea}
         value={value}
         aria-describedby={errorId}
         aria-required={required}
         onChange={(e) => onChange(e.target.value)}
+        rows={rows}
+        cols={cols}
+        placeholder={placeholder}
+        maxLength={maxLength}
       />
       {error && (
         <span id={errorId} className={formStyles.error}>
@@ -40,4 +42,4 @@ function GenericInput({
   );
 }
 
-export default GenericInput;
+export default GenericTextArea;
