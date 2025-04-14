@@ -1,9 +1,3 @@
-.addBlog {
-  padding: 0.625rem;
-  display: block;
-  text-align: end;
-}
-
 .blogPostList {
   display: grid;
   gap: 1.25rem;

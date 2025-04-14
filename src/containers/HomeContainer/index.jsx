@@ -28,10 +28,7 @@ const HomeContainer = () => {
       {isAddPage ? (
         <BlogPostForm onSubmit={handleSavePost} />
       ) : (
-        <BlogPostList
-          posts={blogPosts}
-          onClickHandler={() => navigate("/add")}
-        />
+        <BlogPostList posts={blogPosts} />
       )}
     </>
   );

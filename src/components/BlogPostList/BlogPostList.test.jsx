@@ -14,13 +14,7 @@ vi.mock("../../molecules/BlogPostItem", () => ({
 
 describe("BlogPostList", () => {
   it.skip("renders blog posts correctly", () => {
-    render(
-      <BlogPostList
-        posts={BLOG_POSTS}
-        onClickHandler={() => {}}
-        disabled={false}
-      />
-    );
+    render(<BlogPostList posts={BLOG_POSTS} />);
 
     BLOG_POSTS.forEach((blog) => {
       const blogPostElement = screen.queryByTestId(`blog-post-${blog.id}`);
