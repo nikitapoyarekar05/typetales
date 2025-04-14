@@ -10,8 +10,10 @@ A **React 19** blogging application built with **Vite** and tested using **Vites
 
 ## Project Structure  
     type-tales 
+        │── .github/
+        │ │ └── workflows/
+        │ │ │ │ └── deploy.yml
         │── src/ 
-        │ ├── assets/             # Static assets (images, icons, etc.) 
         │ ├── components/         # Reusable React components 
         │ ├── container/          # Container components for pages
         │ ├── globals/            # Global CSS files
@@ -25,7 +27,6 @@ A **React 19** blogging application built with **Vite** and tested using **Vites
         │── vite.config.js        # Vite configuration
         │── .eslintrc.js          # Linting rules
         │── .gitignore            # Git ignore rules
-
 
 ## Installation & Setup  
 1. Clone the repository:  
