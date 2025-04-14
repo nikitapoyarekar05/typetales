@@ -23,8 +23,7 @@ const NavBar = () => {
       </Link>
       <div className={styles.links}>
         <Link to="/">{AUTHOR.HEADER_LINKS.HOME}</Link>
-        <Link to="/blog">{AUTHOR.HEADER_LINKS.BLOG}</Link>
-        <Link to="/about">{AUTHOR.HEADER_LINKS.ABOUT}</Link>
+        <Link to="/add">{AUTHOR.HEADER_LINKS.ADD_BLOG}</Link>
       </div>
       <Button
         id="toggle-menu"

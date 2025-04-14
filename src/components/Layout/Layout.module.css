@@ -11,12 +11,10 @@
 .main {
   flex: 1;
   padding: 3rem 1.25rem 1.25rem;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 .footer {
-  background-color: #003366;
+  background-color: #666;
   color: white;
   text-align: center;
   height: 2.5rem;

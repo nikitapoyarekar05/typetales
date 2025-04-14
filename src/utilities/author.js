@@ -3,8 +3,7 @@ export const AUTHOR = {
     APP_NAME: "TypeTales",
     HEADER_LINKS: {
         HOME: "Home",
-        BLOG: "Blog",
-        ABOUT: "About"
+        ADD_BLOG: "Add Blog"
     },
     NO_BLOGS_POSTS: "No blog posts available.",
     CREATE_POST: "Create Post",
