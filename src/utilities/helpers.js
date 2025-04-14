@@ -42,3 +42,11 @@ export const dateInLocale = (date) => {
 export const cleanText = (text) => {
   return text.trim()
 }
+
+export const extractTextFromHtml = (htmlContent) => {
+  const html = htmlContent;
+  const tempContainer = document.createElement("span");
+  tempContainer.innerHTML = html;
+  const text = tempContainer.innerText;
+  return cleanText(text);
+}

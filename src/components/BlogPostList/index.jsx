@@ -9,11 +9,7 @@ const BlogPostList = ({ posts = [] }) => {
   ) : (
     <div className={styles.blogPostList}>
       {posts.map((post) => (
-        <BlogPostItem
-          data-testid={`blog-post-${post.id}`}
-          key={post.id}
-          {...post}
-        />
+        <BlogPostItem data-testid={`post-${post.id}`} key={post.id} {...post} />
       ))}
     </div>
   );
