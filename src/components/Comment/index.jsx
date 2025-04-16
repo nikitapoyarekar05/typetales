@@ -1,15 +1,12 @@
 import styles from "./Comment.module.css";
 
-import { cleanText } from "../../utilities/helpers";
+import { cleanText, getHash } from "../../utilities/helpers";
 
 const Comment = ({ comment }) => {
   const avatarSrc = comment.avatarUrl?.length
-    ? comment.avatarUrl
-    : "https://avatar.iran.liara.run/public/74";
-
-  const avatarAlt = comment.avatarUrl
-    ? "Profile picture"
-    : "Avatar placeholder";
+      ? comment.avatarUrl
+      : `https://avatar.iran.liara.run/public/${getHash(comment.id) % 100}`,
+    avatarAlt = comment.avatarUrl ? "Profile picture" : "Avatar placeholder";
 
   return (
     <div className={styles.comment}>

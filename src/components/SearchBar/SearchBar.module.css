@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  min-width: 12.5rem;
+  max-width: 15.625rem;
+}
+
+.searchIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .searchIcon {
+    cursor: pointer;
+  }
+
+  .searchInput {
+    min-width: 10rem;
+    max-width: 15.625rem;
+  }
+}

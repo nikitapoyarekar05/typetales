@@ -6,7 +6,7 @@ const Button = ({
   disabled,
   variant,
   className,
-  dataTestid,
+  dataTestId,
   ariaLabel,
   ariaExpanded,
   onClick,
@@ -29,11 +29,7 @@ const Button = ({
     return classes.join(" ");
   };
 
-  const getDataTestId = () => {
-    if (dataTestid) return dataTestid;
-    if (!dataTestid & variant) return `${variant}-${id}`;
-    return id;
-  };
+  const getDataTestId = () => dataTestId || (variant ? `${variant}-${id}` : id);
 
   return (
     <button

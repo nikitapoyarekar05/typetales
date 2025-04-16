@@ -1,23 +1,14 @@
 import styles from "./Layout.module.css";
 
-import NavBar from "../NavBar";
-import { AUTHOR } from "../../utilities/author";
+import Footer from "../Footer";
+import Header from "../Header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, onSearch }) => {
   return (
     <div className={styles.layout}>
-      <header className={styles.header}>
-        <NavBar />
-      </header>
+      <Header onSearch={onSearch} />
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>
-        <p>
-          &copy;&nbsp;
-          {`${new Date().getFullYear()} ${AUTHOR.APP_NAME}. ${
-            AUTHOR.ALL_RIGHTS
-          } `}
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 };

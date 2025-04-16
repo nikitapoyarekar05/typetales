@@ -5,27 +5,35 @@ function GenericInput({
   htmlFor,
   type,
   required,
+  displayLabel = true,
   label,
   placeholder,
   disabled = false,
+  customClass,
+  dataTestId,
   value,
-  onChange,
+  onChange = () => {},
   error,
   errorMessage,
 }) {
   const errorId = error ? `${id}-error` : undefined;
 
+  const getDataTestId = () => dataTestId ?? id ?? "";
+
   return (
     <div className={formStyles.formGroup}>
-      <label className={formStyles.label} htmlFor={htmlFor}>
-        {label}
-      </label>
+      {displayLabel && (
+        <label className={formStyles.label} htmlFor={htmlFor}>
+          {label}
+        </label>
+      )}
       <input
         id={id}
         type={type ?? "text"}
-        className={formStyles.input}
+        className={`${formStyles.input} ${customClass ? customClass : ""}`}
         placeholder={placeholder}
         disabled={disabled}
+        data-testid={getDataTestId()}
         value={value}
         aria-describedby={errorId}
         aria-required={required}

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 
 import BlogPostForm from "../../components/BlogPostForm";
 import BlogPostDetail from "../../components/BlogPostDetail";
+import { AUTHOR } from "../../utilities/author";
 
-const BlogContainer = () => {
+const BlogContainer = ({ onDeletePost }) => {
   const [blogPosts, setBlogPosts] = useState(
       JSON.parse(localStorage.getItem("blogPosts")) || []
     ),
@@ -24,11 +25,16 @@ const BlogContainer = () => {
 
   return (
     <>
-      <h1>Blog Posts</h1>
+      <h1>{AUTHOR.BLOG_POSTS}</h1>
       {isEdit ? (
         <BlogPostForm post={post} onSubmit={handleUpdate} />
       ) : (
-        <BlogPostDetail post={post} isEdit={isEdit} setIsEdit={setIsEdit} />
+        <BlogPostDetail
+          post={post}
+          isEdit={isEdit}
+          setIsEdit={setIsEdit}
+          onDeletePost={onDeletePost}
+        />
       )}
     </>
   );

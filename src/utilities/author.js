@@ -3,7 +3,7 @@ export const AUTHOR = {
     APP_NAME: "TypeTales",
     HEADER_LINKS: {
         HOME: "Home",
-        ADD_BLOG: "Add Blog"
+        NEW_POST: "New Post"
     },
     NO_BLOGS_POSTS: "No blog posts available.",
     CREATE_POST: "Create Post",
@@ -22,7 +22,6 @@ export const AUTHOR = {
         DESCRIPTION: "Are you sure you want to delete this post?"
     },
     BUTTON_LABELS: {
-        ADD_BLOG: "Add Blog",
         EDIT_BLOG: "Edit Blog",
         DELETE: "Delete",
         CANCEL: "Cancel"
@@ -35,4 +34,9 @@ export const AUTHOR = {
     },
     SUBMIT: "Submit",
     COMMENTS: "Comments"
+}
+
+export const ICONS = {
+    CLOSE: "x",
+    HAMBURGER: "☰"
 }

@@ -1,7 +1,3 @@
-.header {
-  margin-bottom: 1rem;
-}
-
 .layout {
   display: flex;
   flex-direction: column;
@@ -13,25 +9,8 @@
   padding: 3rem 1.25rem 1.25rem;
 }
 
-.footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  padding: 1rem;
-}
-
-.footer p {
-  margin: 0;
-}
-
 @media (max-width: 768px) {
   .main {
     padding: 3rem 0.625rem 0.625rem;
-  }
-
-  .footer {
-    font-size: 0.875rem;
   }
 }

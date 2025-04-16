@@ -6,7 +6,6 @@
   z-index: 1000;
   width: 100%;
   height: 3.75rem;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +23,7 @@
   padding-right: 1rem;
   display: flex;
   gap: 1.25rem;
+  align-items: center;
 }
 
 .links a {
@@ -34,6 +34,7 @@
 
 .links a:last-child {
   padding-right: 1.25rem;
+  width: 100%;
 }
 
 .hamburger {
@@ -71,6 +72,10 @@ button:focus {
   outline-offset: 0.125rem;
 }
 
+.mobileView {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .links {
     display: none;
@@ -78,5 +83,11 @@ button:focus {
 
   .hamburger {
     display: block;
+  }
+
+  .mobileView {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 }

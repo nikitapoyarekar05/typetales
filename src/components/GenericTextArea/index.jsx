@@ -5,6 +5,7 @@ function GenericTextArea({
   htmlFor,
   required,
   label,
+  dataTestId,
   value,
   onChange,
   error,
@@ -24,6 +25,7 @@ function GenericTextArea({
       <textarea
         id={id}
         className={formStyles.textArea}
+        data-testid={dataTestId}
         value={value}
         aria-describedby={errorId}
         aria-required={required}

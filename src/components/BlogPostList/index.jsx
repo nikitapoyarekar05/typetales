@@ -1,6 +1,6 @@
 import styles from "./BlogPostList.module.css";
+
 import { AUTHOR } from "../../utilities/author";
-import Button from "../Button/index";
 import BlogPostItem from "../BlogPostItem";
 
 const BlogPostList = ({ posts = [] }) => {

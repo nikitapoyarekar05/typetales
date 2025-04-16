@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import styles from "./CommentForm.module.css";
 
 import { AUTHOR } from "../../utilities/author";
@@ -9,11 +10,11 @@ import { dateInLocale } from "../../utilities/helpers";
 
 function CommentForm({ userName, isLoggedIn, onSubmit }) {
   const [commenterName, setCommenterName] = useState(
-    isLoggedIn ? userName : ""
-  );
-  const [commentText, setCommentText] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
-  const [errors, setErrors] = useState({});
+      isLoggedIn ? userName : ""
+    ),
+    [commentText, setCommentText] = useState(""),
+    [avatarUrl, setAvatarUrl] = useState(""),
+    [errors, setErrors] = useState({});
 
   const validateForm = () => {
     const newErrors = {};
@@ -43,10 +44,9 @@ function CommentForm({ userName, isLoggedIn, onSubmit }) {
       name: commenterName,
       commentText,
       avatarUrl,
-      date: dateInLocale(),
+      date: dateInLocale("", true),
     };
 
-    // console.log({ newComment });
     onSubmit(newComment, resetForm);
   };
 
@@ -59,6 +59,7 @@ function CommentForm({ userName, isLoggedIn, onSubmit }) {
           required={true}
           label={AUTHOR.COMMENT_FORM_LABELS.NAME}
           disabled={isLoggedIn}
+          dataTestId="commenterName"
           value={commenterName}
           onChange={setCommenterName}
           error={errors.commenterName}
@@ -66,10 +67,11 @@ function CommentForm({ userName, isLoggedIn, onSubmit }) {
         />
 
         <GenericTextArea
-          id="comment"
-          htmlFor="comment"
+          id="comment-content"
+          htmlFor="comment-content"
           required={true}
           label={AUTHOR.COMMENT_FORM_LABELS.COMMENT}
+          dataTestId="comment-content"
           value={commentText}
           onChange={setCommentText}
           error={errors.comment}
@@ -80,7 +82,8 @@ function CommentForm({ userName, isLoggedIn, onSubmit }) {
           id="avatar"
           htmlFor="avatar"
           label={AUTHOR.COMMENT_FORM_LABELS.AVATAR_URL}
-          placeholder="https://avatar.iran.liara.run/public/91"
+          placeholder="https://avatar.iran.liara.run/public"
+          dataTestId="avatar"
           value={avatarUrl}
           onChange={setAvatarUrl}
         />
@@ -90,7 +93,7 @@ function CommentForm({ userName, isLoggedIn, onSubmit }) {
             id="submit-comment"
             type="submit"
             variant="primary"
-            dataTestid="submit-comment"
+            dataTestId="submit-comment"
             ariaLabel="Submit"
           >
             {AUTHOR.SUBMIT}

@@ -39,7 +39,7 @@ const ConfirmationDialog = ({ isOpen, onClose, onConfirm }) => {
             id="cancel-blogDelete"
             variant="secondary"
             className={styles.button}
-            data-testid="cancel-blogDelete"
+            dataTestId="cancel-blogDelete"
             ariaLabel="Cancel delete blog"
             onClick={onClose}
           >
@@ -49,7 +49,7 @@ const ConfirmationDialog = ({ isOpen, onClose, onConfirm }) => {
             id="delete-blog"
             variant="danger"
             className={styles.button}
-            data-testid="delete-blog"
+            dataTestId="delete-blog"
             ariaLabel="Delete Blog"
             onClick={onConfirm}
           >

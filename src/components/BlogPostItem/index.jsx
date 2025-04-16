@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./BlogPostItem.module.css";
 
-import { formatDate, extractTextFromHtml } from "../../utilities/helpers";
+import { extractTextFromHtml, dateInLocale } from "../../utilities/helpers";
 import { AUTHOR } from "../../utilities/author";
 
 const BlogPostItem = (props) => {
@@ -17,7 +17,7 @@ const BlogPostItem = (props) => {
       </h2>
       <p className={styles.summary}>{extractTextFromHtml(props.content)}</p>
       <p className={styles.date} data-testid="date">
-        {AUTHOR.BLOG_DATE.replace("date", formatDate(date))}
+        {AUTHOR.BLOG_DATE.replace("date", dateInLocale(date))}
       </p>
     </div>
   );

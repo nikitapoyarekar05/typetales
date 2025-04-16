@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 
 import styles from "./NavBar.module.css";
 
-import { AUTHOR } from "../../utilities/author";
+import { AUTHOR, ICONS } from "../../utilities/author";
 import Button from "../Button";
+import SearchBar from "../SearchBar";
 
-const CLOSE_ICON = "x";
-const HAMBURGER_ICON = "☰";
-
-const NavBar = () => {
+const NavBar = ({ onSearch }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -22,30 +20,39 @@ const NavBar = () => {
         {AUTHOR.APP_NAME}
       </Link>
       <div className={styles.links}>
+        <SearchBar
+          id="web-searchBar"
+          dataTestId="web-searchBar"
+          onSearch={onSearch}
+        />
         <Link to="/">{AUTHOR.HEADER_LINKS.HOME}</Link>
-        <Link to="/add">{AUTHOR.HEADER_LINKS.ADD_BLOG}</Link>
+        <Link to="/add">{AUTHOR.HEADER_LINKS.NEW_POST}</Link>
       </div>
-      <Button
-        id="toggle-menu"
-        className={styles.hamburger}
-        dataTestid="toggle-menu"
-        aria-label="Toggle menu"
-        ariaExpanded={isMobileMenuOpen}
-        onClick={toggleMobileMenu}
-      >
-        {isMobileMenuOpen ? CLOSE_ICON : HAMBURGER_ICON}
-      </Button>
+      <span className={styles.mobileView}>
+        <SearchBar
+          id="mobile-searchBar"
+          dataTestId="mobile-searchBar"
+          onSearch={onSearch}
+        />
+        <Button
+          id="toggle-menu"
+          className={styles.hamburger}
+          dataTestId="toggle-menu"
+          aria-label="Toggle menu"
+          ariaExpanded={isMobileMenuOpen}
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? ICONS.CLOSE : ICONS.HAMBURGER}
+        </Button>
+      </span>
 
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <Link to="/" onClick={toggleMobileMenu}>
             {AUTHOR.HEADER_LINKS.HOME}
           </Link>
-          <Link to="/blog" onClick={toggleMobileMenu}>
-            {AUTHOR.HEADER_LINKS.BLOG}
-          </Link>
-          <Link to="/about" onClick={toggleMobileMenu}>
-            {AUTHOR.HEADER_LINKS.ABOUT}
+          <Link to="/add" onClick={toggleMobileMenu}>
+            {AUTHOR.HEADER_LINKS.NEW_POST}
           </Link>
         </div>
       )}

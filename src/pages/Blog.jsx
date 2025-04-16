@@ -1,7 +1,7 @@
 import BlogContainer from "../containers/BlogContainer";
 
-const Blog = () => {
-  return <BlogContainer />;
+const Blog = ({ onDeletePost }) => {
+  return <BlogContainer onDeletePost={onDeletePost} />;
 };
 
 export default Blog;

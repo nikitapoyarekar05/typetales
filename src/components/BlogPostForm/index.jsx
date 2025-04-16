@@ -9,11 +9,11 @@ import Editor from "../Editor";
 import Button from "../Button";
 
 const BlogPostForm = ({ post, onSubmit }) => {
-  const [title, setTitle] = useState(post?.title || "");
-  const [content, setContent] = useState(post?.content || "");
-  const [author, setAuthor] = useState(post?.author || "");
-  const [date, setDate] = useState(post?.date || "");
-  const [errors, setErrors] = useState({});
+  const [title, setTitle] = useState(post?.title || ""),
+    [content, setContent] = useState(post?.content || ""),
+    [author, setAuthor] = useState(post?.author || ""),
+    [date, setDate] = useState(post?.date || ""),
+    [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +48,7 @@ const BlogPostForm = ({ post, onSubmit }) => {
           htmlFor="title"
           required={true}
           label={AUTHOR.FORM_LABELS.TITLE}
+          dataTestId="title"
           value={title}
           onChange={setTitle}
           error={errors.title}
@@ -59,6 +60,7 @@ const BlogPostForm = ({ post, onSubmit }) => {
           htmlFor="content"
           required={true}
           label={AUTHOR.FORM_LABELS.CONTENT}
+          dataTestId="content"
           content={content}
           onChange={setContent}
           error={errors.content}
@@ -70,6 +72,7 @@ const BlogPostForm = ({ post, onSubmit }) => {
           htmlFor="author"
           required={true}
           label={AUTHOR.FORM_LABELS.AUTHOR}
+          dataTestId="author"
           value={author}
           onChange={setAuthor}
           error={errors.author}
@@ -82,6 +85,7 @@ const BlogPostForm = ({ post, onSubmit }) => {
           type="date"
           required={true}
           label={AUTHOR.FORM_LABELS.DATE}
+          dataTestId="date"
           value={date}
           onChange={setDate}
           error={errors.date}
@@ -94,7 +98,7 @@ const BlogPostForm = ({ post, onSubmit }) => {
             type="submit"
             variant="primary"
             className={styles.postButton}
-            dataTestid={getId()}
+            dataTestId={getId()}
             ariaLabel={getButtonLabel()}
           >
             {getButtonLabel()}
